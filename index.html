@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Crimson Rain — html-anime</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #14080c;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #14080c;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .world {
+        display: block;
+        width: 1920px;
+        height: 1080px;
+      }
+      #cam1 {
+        width: 1920px;
+        height: 1080px;
+        transform-origin: 64% 50%;
+      }
+      #s1 {
+        z-index: 3;
+      }
+      #s2 {
+        z-index: 2;
+      }
+      #s3 {
+        z-index: 1;
+      }
+      #bars {
+        z-index: 6;
+      }
+      .bar {
+        position: absolute;
+        left: 0;
+        width: 1920px;
+        background: #14080c;
+      }
+      .bar.top {
+        top: 0;
+        height: 56px;
+      }
+      .bar.bottom {
+        top: 1000px;
+        height: 80px;
+      }
+      #dip-a {
+        z-index: 7;
+        background: #ff3b3b;
+      }
+      #dip-b {
+        z-index: 7;
+        background: #14080c;
+      }
+      #fade {
+        z-index: 8;
+        background: #14080c;
+      }
+      #dip-a,
+      #dip-b,
+      #fade,
+      .off {
+        opacity: 0;
+      }
+      /* wide-shot silhouettes */
+      .sil {
+        fill: #14080c;
+        stroke: #f6e4e4;
+        stroke-width: 2.5;
+        stroke-opacity: 0.8;
+        stroke-linejoin: round;
+      }
+      /* medium and close figure */
+      .cel {
+        fill: #1a1014;
+        stroke: #f6e4e4;
+        stroke-width: 6;
+        stroke-linejoin: round;
+      }
+      .cel.thin {
+        stroke-width: 4;
+      }
+      .arm-o,
+      .arm {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .arm-o {
+        stroke: #f6e4e4;
+        stroke-width: 58;
+      }
+      .arm {
+        stroke: #1a1014;
+        stroke-width: 46;
+      }
+      .hand {
+        fill: #e8b8a8;
+        stroke: #1a1014;
+        stroke-width: 4;
+      }
+      .blade {
+        fill: #f3f6ff;
+        stroke: #1a1014;
+        stroke-width: 3;
+        stroke-linejoin: round;
+      }
+      .smear {
+        fill: #f3f6ff;
+      }
+      .skin {
+        fill: #e8b8a8;
+        stroke: #1a1014;
+        stroke-width: 6;
+        stroke-linejoin: round;
+      }
+      .ink3 {
+        fill: none;
+        stroke: #1a1014;
+        stroke-width: 3;
+        stroke-linecap: round;
+      }
+      .hairline {
+        fill: none;
+        stroke: #1a1014;
+        stroke-linecap: round;
+      }
+      .rain {
+        fill: none;
+        stroke: #f6e4e4;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div data-hf-id="hf-kgjb" id="root" data-composition-id="film" data-start="0" data-duration="8" data-width="1920" data-height="1080">
+      <!-- 1 · Establish · 0.00–2.40 · wide, 100% to 106% -->
+      <div data-hf-id="hf-wojt" id="s1" class="clip" data-start="0" data-duration="2.4" data-track-index="1">
+        <div data-hf-id="hf-1xkn" id="cam1">
+          <svg data-hf-id="hf-vmlt" class="world" viewBox="0 0 1920 1080">
+            <defs data-hf-id="hf-mh0t">
+              <linearGradient data-hf-id="hf-wwvq" id="sky1" x1="0" y1="0" x2="0" y2="1">
+                <stop data-hf-id="hf-v0do" offset="0" stop-color="#14080c" />
+                <stop data-hf-id="hf-7o2c" offset="0.5" stop-color="#2a1016" />
+                <stop data-hf-id="hf-wk0a" offset="0.72" stop-color="#2a1016" />
+                <stop data-hf-id="hf-2lvr" offset="1" stop-color="#14080c" />
+              </linearGradient>
+              <path data-hf-id="hf-z256" id="rn1" d="M-151,336 l-12,84 M-47,235 l-12,84 M39,107 l-12,84 M93,511 l-12,84 M170,390 l-12,84 M249,372 l-12,84 M377,100 l-12,84 M432,527 l-12,84 M513,361 l-12,84 M599,541 l-12,84 M717,217 l-12,84 M827,489 l-12,84 M887,73 l-12,84 M927,332 l-12,84 M1023,342 l-12,84 M1150,2 l-12,84 M1188,360 l-12,84 M1285,111 l-12,84 M1349,168 l-12,84 M1455,120 l-12,84 M1559,154 l-12,84 M1633,37 l-12,84 M1715,25 l-12,84 M1834,236 l-12,84 M1866,500 l-12,84 M1952,428 l-12,84 M2049,240 l-12,84 M2186,226 l-12,84" />
+              <path data-hf-id="hf-0ic1" id="rf1" d="M-146,374 l-8,56 M-109,82 l-8,56 M-79,148 l-8,56 M-22,0 l-8,56 M50,6 l-8,56 M109,414 l-8,56 M133,105 l-8,56 M205,382 l-8,56 M251,476 l-8,56 M304,286 l-8,56 M356,365 l-8,56 M430,283 l-8,56 M497,173 l-8,56 M543,0 l-8,56 M569,154 l-8,56 M630,244 l-8,56 M704,417 l-8,56 M781,466 l-8,56 M812,318 l-8,56 M844,23 l-8,56 M898,94 l-8,56 M999,337 l-8,56 M1002,28 l-8,56 M1085,320 l-8,56 M1160,18 l-8,56 M1170,79 l-8,56 M1237,403 l-8,56 M1308,230 l-8,56 M1353,228 l-8,56 M1389,85 l-8,56 M1488,512 l-8,56 M1534,501 l-8,56 M1550,291 l-8,56 M1606,120 l-8,56 M1672,302 l-8,56 M1745,287 l-8,56 M1801,375 l-8,56 M1852,103 l-8,56 M1874,378 l-8,56 M1939,269 l-8,56 M2002,294 l-8,56 M2068,527 l-8,56 M2134,313 l-8,56 M2179,390 l-8,56" />
+            </defs>
+            <rect data-hf-id="hf-bxej" width="1920" height="1080" fill="url(#sky1)" />
+
+            <!-- eclipse -->
+            <g data-hf-id="hf-zytw" transform="translate(1240 330)">
+              <circle data-hf-id="hf-hupj" r="300" fill="#ff3b3b" opacity="0.08" />
+              <circle data-hf-id="hf-sjy7" r="220" fill="#ff3b3b" opacity="0.14" />
+              <circle data-hf-id="hf-l5ei" r="160" fill="#ff3b3b" opacity="0.3" />
+              <g data-hf-id="hf-no4p" fill="#ff3b3b" opacity="0.5">
+                <path data-hf-id="hf-az59" id="spike1" d="M-9,-150 L0,-236 L9,-150 Z" />
+                <use data-hf-id="hf-kmdm" href="#spike1" transform="rotate(58) scale(0.8)" />
+                <use data-hf-id="hf-ulo5" href="#spike1" transform="rotate(131)" />
+                <use data-hf-id="hf-vhyb" href="#spike1" transform="rotate(197) scale(0.85)" />
+                <use data-hf-id="hf-odkf" href="#spike1" transform="rotate(252)" />
+                <use data-hf-id="hf-6xa4" href="#spike1" transform="rotate(311) scale(0.75)" />
+              </g>
+              <circle data-hf-id="hf-vfpc" r="138" fill="none" stroke="#ff3b3b" stroke-width="10" />
+              <circle data-hf-id="hf-mtk7" r="132" fill="#100608" />
+            </g>
+
+            <!-- far silhouette -->
+            <path data-hf-id="hf-klv5" fill="#14080c" opacity="0.55" d="M0,720 L0,600 L60,600 L60,560 L130,560 L130,610 L210,610 L230,520 L250,610 L320,610 L320,580 L420,580 L420,640 L500,640 L500,540 L560,540 L560,500 L600,500 L600,540 L660,540 L660,620 L760,620 L760,590 L880,590 L880,650 L960,650 L960,560 L1040,560 L1060,600 L1120,600 L1120,640 L1400,640 L1400,580 L1480,580 L1480,530 L1520,500 L1560,530 L1560,600 L1660,600 L1660,560 L1760,560 L1760,620 L1840,620 L1840,580 L1920,580 L1920,720 Z" />
+            <g data-hf-id="hf-ylzs" fill="#f3f6ff" opacity="0.5">
+              <rect data-hf-id="hf-fzxl" x="82" y="578" width="8" height="12" />
+              <rect data-hf-id="hf-9usc" x="532" y="520" width="8" height="12" />
+              <rect data-hf-id="hf-dmv3" x="982" y="580" width="8" height="12" />
+              <rect data-hf-id="hf-djd0" x="1702" y="580" width="8" height="12" />
+            </g>
+
+            <!-- rooftop -->
+            <g data-hf-id="hf-ru9a" fill="#14080c">
+              <rect data-hf-id="hf-f4ns" x="0" y="780" width="1920" height="300" />
+              <polygon data-hf-id="hf-i0qo" points="160,572 285,520 410,572" />
+              <rect data-hf-id="hf-q0l9" x="170" y="570" width="230" height="150" />
+              <rect data-hf-id="hf-jppf" x="190" y="718" width="12" height="64" />
+              <rect data-hf-id="hf-za9g" x="368" y="718" width="12" height="64" />
+              <rect data-hf-id="hf-gnvc" x="1640" y="500" width="8" height="282" />
+            </g>
+            <path data-hf-id="hf-zvnx" d="M400,574 L400,718" stroke="#f6e4e4" stroke-width="3" opacity="0.3" />
+            <path data-hf-id="hf-zafw" d="M1610,560 L1680,560 M1620,610 L1670,610" stroke="#14080c" stroke-width="6" />
+            <path data-hf-id="hf-o4xl" d="M480,746 L980,746 M500,746 L500,782 M570,746 L570,782 M640,746 L640,782 M710,746 L710,782 M780,746 L780,782 M850,746 L850,782 M920,746 L920,782" stroke="#14080c" stroke-width="6" />
+            <rect data-hf-id="hf-y7ji" x="0" y="779" width="1920" height="3" fill="#f6e4e4" opacity="0.3" />
+            <g data-hf-id="hf-mwgw" fill="#ff3b3b" opacity="0.4">
+              <rect data-hf-id="hf-ybcj" x="1150" y="842" width="180" height="5" />
+              <rect data-hf-id="hf-cniv" x="1190" y="866" width="110" height="4" />
+              <rect data-hf-id="hf-u68b" x="1130" y="896" width="70" height="4" />
+              <rect data-hf-id="hf-o1rf" x="1260" y="924" width="90" height="4" />
+            </g>
+
+            <!-- wide figure, under the eclipse -->
+            <g data-hf-id="hf-cbko" transform="translate(1240 780) scale(1.1)">
+              <path data-hf-id="hf-th6e" class="sil" d="M-16,-118 L-42,0 L-10,0 L0,-56 L12,0 L44,0 L22,-118 Z" />
+              <g data-hf-id="hf-2m89" id="e1">
+                <path data-hf-id="hf-8yk4" class="sil" d="M-30,-114 L-38,-64 L42,-70 L32,-114 Z" />
+                <path data-hf-id="hf-ekae" class="sil" d="M-14,-216 L-44,-196 L-36,-190 L-10,-206 Z" />
+              </g>
+              <g data-hf-id="hf-ot52" id="e2" class="off">
+                <path data-hf-id="hf-8bfy" class="sil" d="M-30,-114 L-66,-76 L-44,-70 L-38,-62 L42,-70 L32,-114 Z" />
+                <path data-hf-id="hf-knlh" class="sil" d="M-14,-216 L-60,-210 L-50,-200 L-10,-206 Z" />
+              </g>
+              <g data-hf-id="hf-sr93" id="e3" class="off">
+                <path data-hf-id="hf-fpqk" class="sil" d="M-30,-114 L-38,-64 L42,-70 L32,-114 Z" />
+                <path data-hf-id="hf-lne1" class="sil" d="M-14,-216 L-60,-210 L-50,-200 L-10,-206 Z" />
+              </g>
+              <path data-hf-id="hf-6kev" class="sil" d="M-26,-188 L24,-190 L32,-112 L-30,-112 Z" />
+              <path data-hf-id="hf-vkv5" class="sil" d="M8,-110 L-74,-80 L-71,-73 L11,-103 Z" />
+              <path data-hf-id="hf-7oqo" class="sil" d="M9,-108 L42,-122 L45,-115 L12,-101 Z" />
+              <circle data-hf-id="hf-itoo" class="sil" cx="4" cy="-206" r="17" />
+              <path data-hf-id="hf-gu7a" class="sil" d="M-16,-210 L-10,-228 L6,-228 L20,-222 L24,-206 L14,-210 L6,-202 L-4,-208 Z" />
+              <path data-hf-id="hf-1ahc" id="e-arm-rest" class="sil" d="M16,-184 L30,-132 L24,-106 L16,-108 L20,-132 L8,-180 Z" />
+              <path data-hf-id="hf-t1cm" id="e-arm-hilt" class="sil off" d="M16,-184 L40,-150 L40,-118 L32,-116 L32,-146 L8,-178 Z" />
+            </g>
+
+            <!-- rain, own layer -->
+            <g data-hf-id="hf-x7c8" id="rain1f" class="rain" stroke-width="2" opacity="0.3">
+              <use data-hf-id="hf-s84e" href="#rf1" x="-80" y="560" />
+              <use data-hf-id="hf-530p" href="#rf1" />
+              <use data-hf-id="hf-xfvg" href="#rf1" x="80" y="-560" />
+            </g>
+            <g data-hf-id="hf-4io8" id="rain1n" class="rain" stroke-width="3" opacity="0.55">
+              <use data-hf-id="hf-ux4m" href="#rn1" x="-80" y="560" />
+              <use data-hf-id="hf-il5t" href="#rn1" />
+              <use data-hf-id="hf-9nro" href="#rn1" x="80" y="-560" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- 2 · Sakuga · 2.40–6.00 · medium, camera locked -->
+      <div data-hf-id="hf-o2u5" id="s2" class="clip" data-start="2.15" data-duration="3.85" data-track-index="2">
+        <svg data-hf-id="hf-vgh1" class="world" viewBox="0 0 1920 1080">
+          <defs data-hf-id="hf-vl9d">
+            <linearGradient data-hf-id="hf-pbth" id="sky2" x1="0" y1="0" x2="0" y2="1">
+              <stop data-hf-id="hf-dd8k" offset="0" stop-color="#14080c" />
+              <stop data-hf-id="hf-h4sx" offset="0.55" stop-color="#2a1016" />
+              <stop data-hf-id="hf-6dt3" offset="1" stop-color="#14080c" />
+            </linearGradient>
+            <path data-hf-id="hf-v415" id="rn2" d="M-151,336 l-12,84 M-47,235 l-12,84 M39,107 l-12,84 M93,511 l-12,84 M170,390 l-12,84 M249,372 l-12,84 M377,100 l-12,84 M432,527 l-12,84 M513,361 l-12,84 M599,541 l-12,84 M717,217 l-12,84 M827,489 l-12,84 M887,73 l-12,84 M927,332 l-12,84 M1023,342 l-12,84 M1150,2 l-12,84 M1188,360 l-12,84 M1285,111 l-12,84 M1349,168 l-12,84 M1455,120 l-12,84 M1559,154 l-12,84 M1633,37 l-12,84 M1715,25 l-12,84 M1834,236 l-12,84 M1866,500 l-12,84 M1952,428 l-12,84 M2049,240 l-12,84 M2186,226 l-12,84" />
+            <path data-hf-id="hf-6o1u" id="rf2" d="M-146,374 l-8,56 M-109,82 l-8,56 M-79,148 l-8,56 M-22,0 l-8,56 M50,6 l-8,56 M109,414 l-8,56 M133,105 l-8,56 M205,382 l-8,56 M251,476 l-8,56 M304,286 l-8,56 M356,365 l-8,56 M430,283 l-8,56 M497,173 l-8,56 M543,0 l-8,56 M569,154 l-8,56 M630,244 l-8,56 M704,417 l-8,56 M781,466 l-8,56 M812,318 l-8,56 M844,23 l-8,56 M898,94 l-8,56 M999,337 l-8,56 M1002,28 l-8,56 M1085,320 l-8,56 M1160,18 l-8,56 M1170,79 l-8,56 M1237,403 l-8,56 M1308,230 l-8,56 M1353,228 l-8,56 M1389,85 l-8,56 M1488,512 l-8,56 M1534,501 l-8,56 M1550,291 l-8,56 M1606,120 l-8,56 M1672,302 l-8,56 M1745,287 l-8,56 M1801,375 l-8,56 M1852,103 l-8,56 M1874,378 l-8,56 M1939,269 l-8,56 M2002,294 l-8,56 M2068,527 l-8,56 M2134,313 l-8,56 M2179,390 l-8,56" />
+
+            <!-- figure parts, hip at origin, facing right -->
+            <path data-hf-id="hf-deam" id="sk-legs" class="cel" d="M-100,0 L-150,320 L160,320 L110,0 Z" />
+            <path data-hf-id="hf-sf8j" id="sk-coat-rest" class="cel" d="M-96,-30 L-130,260 L130,260 L104,-30 Z" />
+            <path data-hf-id="hf-y5wm" id="sk-coat-flare" class="cel" d="M-96,-30 L-300,170 L-250,200 L-120,260 L130,260 L104,-30 Z" />
+            <path data-hf-id="hf-vj0e" id="sk-pony-rest" class="cel" d="M-6,-426 C-76,-416 -116,-366 -126,-306 L-96,-346 L-86,-316 C-66,-376 -36,-396 -2,-406 Z" />
+            <path data-hf-id="hf-mzzf" id="sk-pony-stream" class="cel" d="M-6,-426 C-96,-436 -166,-416 -216,-386 L-166,-390 L-186,-366 C-116,-386 -56,-396 -2,-406 Z" />
+            <path data-hf-id="hf-sibj" id="sk-saya" class="cel thin" d="M-4,-9 L-372,147 L-364,165 L4,9 Z" />
+            <g data-hf-id="hf-xutx" id="sk-hilt-in">
+              <path data-hf-id="hf-d1sw" class="cel thin" d="M4,-12 L114,-59 L122,-41 L12,6 Z" />
+              <ellipse data-hf-id="hf-f1hm" class="cel thin" cx="6" cy="-2" rx="7" ry="26" transform="rotate(-23 6 -2)" />
+            </g>
+            <g data-hf-id="hf-m682" id="sk-body">
+              <path data-hf-id="hf-c64a" class="cel" d="M-92,-20 L-108,-270 Q-60,-304 6,-304 Q70,-304 108,-272 L96,-20 Z" />
+              <path data-hf-id="hf-p13e" fill="#14080c" opacity="0.2" d="M-92,-20 L-108,-270 Q-80,-290 -50,-298 L-30,-20 Z" />
+              <path data-hf-id="hf-dyl5" d="M-94,-62 L98,-64" fill="none" stroke="#f6e4e4" stroke-width="3" />
+              <path data-hf-id="hf-5l6b" d="M-36,-300 L18,-200 L64,-298" fill="none" stroke="#ff3b3b" stroke-width="6" stroke-linejoin="round" />
+              <g data-hf-id="hf-1rep" transform="translate(34 -376)">
+                <path data-hf-id="hf-m3ow" class="skin" stroke-width="5" d="M-6,62 L40,60 L36,84 L0,86 Z" />
+                <path data-hf-id="hf-r49p" class="skin" stroke-width="5" d="M-10,-40 C30,-56 68,-40 70,-8 L80,12 L68,18 L70,30 C66,52 44,66 18,66 C-10,62 -30,40 -34,10 Z" />
+                <path data-hf-id="hf-fr07" d="M36,-2 L62,-6" class="hairline" stroke-width="4" />
+                <circle data-hf-id="hf-3nnr" cx="54" cy="-3" r="3.5" fill="#ff5a4a" />
+                <path data-hf-id="hf-ps2k" class="cel" d="M-48,34 C-70,-40 -40,-98 20,-100 C72,-102 100,-62 92,-20 L78,-30 L82,-4 L62,-28 L58,-6 L42,-32 L30,-12 L20,-36 C0,-24 -18,0 -22,44 Z" />
+                <path data-hf-id="hf-em7x" fill="#f6e4e4" d="M-30,-78 L20,-90 L60,-80 L54,-70 L20,-80 L-24,-68 Z" />
+              </g>
+            </g>
+            <g data-hf-id="hf-e3cv" id="sk-settle">
+              <use data-hf-id="hf-wfhq" href="#sk-saya" transform="translate(40 -30) rotate(-4)" />
+              <path data-hf-id="hf-e5cd" class="arm-o" d="M-36,-256 L-30,-140 L36,-30" />
+              <path data-hf-id="hf-9dlh" class="arm" d="M-36,-256 L-30,-140 L36,-30" />
+              <circle data-hf-id="hf-mpzz" class="hand" cx="36" cy="-30" r="20" />
+              <path data-hf-id="hf-krnp" class="cel thin" d="M331,-216 L329,-196 L200,-214 L202,-234 Z" />
+              <path data-hf-id="hf-h1e7" class="blade" d="M331,-214 Q530,-200 726,-150 Q530,-184 329,-198 Z" />
+              <ellipse data-hf-id="hf-vpl2" class="cel thin" cx="330" cy="-206" rx="7" ry="26" transform="rotate(8 330 -206)" />
+              <path data-hf-id="hf-zeqa" class="arm-o" d="M118,-249 L220,-200 L300,-210" />
+              <path data-hf-id="hf-c6d6" class="arm" d="M118,-249 L220,-200 L300,-210" />
+              <circle data-hf-id="hf-86ox" class="hand" cx="300" cy="-210" r="20" />
+            </g>
+          </defs>
+          <rect data-hf-id="hf-3oew" width="1920" height="1080" fill="url(#sky2)" />
+
+          <!-- eclipse, large behind the figure -->
+          <g data-hf-id="hf-4vjk" transform="translate(1120 420) scale(2.2)">
+            <circle data-hf-id="hf-h12v" r="300" fill="#ff3b3b" opacity="0.08" />
+            <circle data-hf-id="hf-r2f3" r="220" fill="#ff3b3b" opacity="0.14" />
+            <circle data-hf-id="hf-etvi" r="160" fill="#ff3b3b" opacity="0.3" />
+            <g data-hf-id="hf-kau5" fill="#ff3b3b" opacity="0.5">
+              <path data-hf-id="hf-ex9a" id="spike2" d="M-9,-150 L0,-236 L9,-150 Z" />
+              <use data-hf-id="hf-zkk9" href="#spike2" transform="rotate(58) scale(0.8)" />
+              <use data-hf-id="hf-6s8i" href="#spike2" transform="rotate(131)" />
+              <use data-hf-id="hf-4rbs" href="#spike2" transform="rotate(197) scale(0.85)" />
+              <use data-hf-id="hf-elxc" href="#spike2" transform="rotate(252)" />
+              <use data-hf-id="hf-3qav" href="#spike2" transform="rotate(311) scale(0.75)" />
+            </g>
+            <circle data-hf-id="hf-x8ag" r="138" fill="none" stroke="#ff3b3b" stroke-width="10" />
+            <circle data-hf-id="hf-ds5j" r="132" fill="#100608" />
+          </g>
+
+          <!-- far silhouette and parapet -->
+          <path data-hf-id="hf-63on" fill="#14080c" opacity="0.55" d="M0,1080 L0,860 L90,860 L90,800 L200,800 L200,880 L330,880 L330,760 L420,760 L440,720 L460,760 L560,760 L560,840 L700,840 L700,880 L1000,880 L1000,780 L1110,780 L1110,830 L1260,830 L1260,740 L1340,740 L1340,700 L1380,700 L1380,740 L1460,740 L1460,850 L1600,850 L1600,800 L1720,800 L1720,870 L1920,870 L1920,1080 Z" />
+          <path data-hf-id="hf-zxek" fill="#14080c" d="M0,960 L1920,940 L1920,1080 L0,1080 Z" />
+          <path data-hf-id="hf-ajvt" d="M0,960 L1920,940" stroke="#f6e4e4" stroke-width="3" opacity="0.3" />
+
+          <!-- figure: 8 drawings, swapped on frame boundaries -->
+          <g data-hf-id="hf-8auc" transform="translate(760 820)">
+            <use data-hf-id="hf-uc9k" href="#sk-legs" />
+            <path data-hf-id="hf-qv8v" id="trail" class="smear off" opacity="0.45" d="M100,-50 Q520,-60 760,-560 Q560,-220 120,-30 Z" />
+
+            <!-- d1 ready: hand on the hilt -->
+            <g data-hf-id="hf-fhxm" id="d1">
+              <use data-hf-id="hf-rich" href="#sk-coat-rest" />
+              <use data-hf-id="hf-gq59" href="#sk-pony-rest" transform="rotate(6)" />
+              <use data-hf-id="hf-j1sk" href="#sk-body" transform="rotate(6)" />
+              <g data-hf-id="hf-yajo" transform="translate(60 -40)">
+                <use data-hf-id="hf-4go5" href="#sk-saya" />
+                <use data-hf-id="hf-zvs6" href="#sk-hilt-in" />
+              </g>
+              <path data-hf-id="hf-6f7z" class="arm-o" d="M-43,-264 L-10,-150 L54,-38" />
+              <path data-hf-id="hf-647b" class="arm" d="M-43,-264 L-10,-150 L54,-38" />
+              <circle data-hf-id="hf-gx23" class="hand" cx="54" cy="-38" r="20" />
+              <path data-hf-id="hf-6cdv" class="arm-o" d="M111,-252 L186,-170 L122,-66" />
+              <path data-hf-id="hf-bnyz" class="arm" d="M111,-252 L186,-170 L122,-66" />
+              <circle data-hf-id="hf-nk2e" class="hand" cx="122" cy="-66" r="20" />
+            </g>
+
+            <!-- d2 anticipation: sinks down and back, hilt pushed down -->
+            <g data-hf-id="hf-w085" id="d2" class="off">
+              <use data-hf-id="hf-ato5" href="#sk-coat-rest" />
+              <use data-hf-id="hf-jwbj" href="#sk-pony-rest" transform="translate(-16 14) rotate(2)" />
+              <use data-hf-id="hf-1gfe" href="#sk-body" transform="translate(-16 14) rotate(2)" />
+              <g data-hf-id="hf-qrqe" transform="translate(44 -28) rotate(8)">
+                <use data-hf-id="hf-jgzd" href="#sk-saya" />
+                <use data-hf-id="hf-lgru" href="#sk-hilt-in" />
+              </g>
+              <path data-hf-id="hf-a4k2" class="arm-o" d="M-77,-246 L-30,-130 L40,-26" />
+              <path data-hf-id="hf-aasa" class="arm" d="M-77,-246 L-30,-130 L40,-26" />
+              <circle data-hf-id="hf-ovd7" class="hand" cx="40" cy="-26" r="20" />
+              <path data-hf-id="hf-yznz" class="arm-o" d="M77,-245 L150,-140 L107,-44" />
+              <path data-hf-id="hf-wdfb" class="arm" d="M77,-245 L150,-140 L107,-44" />
+              <circle data-hf-id="hf-d0dd" class="hand" cx="107" cy="-44" r="20" />
+            </g>
+
+            <!-- d3 the draw starts: blade leaves the saya -->
+            <g data-hf-id="hf-zajg" id="d3" class="off">
+              <use data-hf-id="hf-c0l8" href="#sk-coat-rest" />
+              <use data-hf-id="hf-gerb" href="#sk-pony-rest" transform="translate(10 -4) rotate(10)" />
+              <use data-hf-id="hf-jm1a" href="#sk-body" transform="translate(10 -4) rotate(10)" />
+              <use data-hf-id="hf-uyya" href="#sk-saya" transform="translate(40 -30) rotate(-4)" />
+              <path data-hf-id="hf-bbfn" class="arm-o" d="M-14,-270 L-20,-150 L36,-34" />
+              <path data-hf-id="hf-96az" class="arm" d="M-14,-270 L-20,-150 L36,-34" />
+              <circle data-hf-id="hf-w2a3" class="hand" cx="36" cy="-34" r="20" />
+              <path data-hf-id="hf-kg1m" class="blade" d="M37,-36 L180,-109 L186,-97 L43,-24 Z" />
+              <path data-hf-id="hf-fb69" class="cel thin" d="M178,-112 L285,-166 L294,-148 L188,-94 Z" />
+              <ellipse data-hf-id="hf-98va" class="cel thin" cx="183" cy="-103" rx="7" ry="26" transform="rotate(-27 183 -103)" />
+              <path data-hf-id="hf-wwds" class="arm-o" d="M138,-247 L230,-200 L236,-130" />
+              <path data-hf-id="hf-u7ag" class="arm" d="M138,-247 L230,-200 L236,-130" />
+              <circle data-hf-id="hf-pdtg" class="hand" cx="236" cy="-130" r="20" />
+            </g>
+
+            <!-- d4 smear: arm and blade stretched along the arc -->
+            <g data-hf-id="hf-ms0z" id="d4" class="off">
+              <use data-hf-id="hf-bma7" href="#sk-coat-rest" />
+              <use data-hf-id="hf-h5l1" href="#sk-pony-rest" transform="translate(24 -6) rotate(16) scale(0.97 1.05)" />
+              <use data-hf-id="hf-rqiy" href="#sk-body" transform="translate(24 -6) rotate(16) scale(0.97 1.05)" />
+              <use data-hf-id="hf-4t6n" href="#sk-saya" transform="translate(30 -30) rotate(-8)" />
+              <path data-hf-id="hf-vvfa" class="arm-o" d="M33,-285 L-30,-160 L24,-34" />
+              <path data-hf-id="hf-5k0e" class="arm" d="M33,-285 L-30,-160 L24,-34" />
+              <circle data-hf-id="hf-xnou" class="hand" cx="24" cy="-34" r="20" />
+              <path data-hf-id="hf-v9hf" class="smear" d="M110,-70 Q500,-120 760,-520 Q470,-250 140,-46 Z" />
+              <path data-hf-id="hf-vvbh" class="cel thin" d="M386,-297 L374,-313 L464,-378 L476,-362 Z" />
+              <path data-hf-id="hf-tyxa" class="arm-o" d="M178,-248 L330,-300 L430,-340" />
+              <path data-hf-id="hf-gjyu" class="arm" d="M178,-248 L330,-300 L430,-340" />
+              <circle data-hf-id="hf-zh0x" class="hand" cx="430" cy="-340" r="20" />
+            </g>
+
+            <!-- d5 smear: forked tip, body stretched up the travel -->
+            <g data-hf-id="hf-gmb6" id="d5" class="off">
+              <use data-hf-id="hf-ct7a" href="#sk-coat-rest" />
+              <use data-hf-id="hf-x3sh" href="#sk-pony-stream" transform="translate(30 -10) rotate(18) scale(0.96 1.08)" />
+              <use data-hf-id="hf-3izy" href="#sk-body" transform="translate(30 -10) rotate(18) scale(0.96 1.08)" />
+              <use data-hf-id="hf-7qdf" href="#sk-saya" transform="translate(20 -30) rotate(-10)" />
+              <path data-hf-id="hf-f3tx" class="arm-o" d="M52,-296 L-40,-170 L0,-50" />
+              <path data-hf-id="hf-9uml" class="arm" d="M52,-296 L-40,-170 L0,-50" />
+              <circle data-hf-id="hf-fd5a" class="hand" cx="0" cy="-50" r="20" />
+              <path data-hf-id="hf-m6ka" class="smear" d="M452,-524 L880,-740 L820,-690 L910,-670 L468,-512 Z" />
+              <path data-hf-id="hf-o2kr" class="cel thin" d="M372,-428 L388,-416 L468,-512 L452,-524 Z" />
+              <path data-hf-id="hf-7r6w" class="arm-o" d="M194,-254 L320,-370 L420,-470" />
+              <path data-hf-id="hf-ii00" class="arm" d="M194,-254 L320,-370 L420,-470" />
+              <circle data-hf-id="hf-9dmm" class="hand" cx="420" cy="-470" r="20" />
+            </g>
+
+            <!-- d6 overshoot: blade high over the eclipse -->
+            <g data-hf-id="hf-8m81" id="d6" class="off">
+              <use data-hf-id="hf-52u9" href="#sk-coat-flare" />
+              <use data-hf-id="hf-sxyl" href="#sk-pony-stream" transform="translate(20 -10) rotate(10)" />
+              <use data-hf-id="hf-7iyw" href="#sk-body" transform="translate(20 -10) rotate(10)" />
+              <use data-hf-id="hf-ci5y" href="#sk-saya" transform="translate(10 -30) rotate(-12)" />
+              <path data-hf-id="hf-0tn0" class="arm-o" d="M-4,-276 L-70,-170 L0,-36" />
+              <path data-hf-id="hf-jb84" class="arm" d="M-4,-276 L-70,-170 L0,-36" />
+              <circle data-hf-id="hf-6zfy" class="hand" cx="0" cy="-36" r="20" />
+              <path data-hf-id="hf-c66w" class="cel thin" d="M327,-477 L339,-461 L239,-377 L227,-393 Z" />
+              <path data-hf-id="hf-0sq1" class="blade" d="M328,-475 Q470,-610 624,-713 Q486,-582 338,-463 Z" />
+              <ellipse data-hf-id="hf-86xp" class="cel thin" cx="333" cy="-469" rx="7" ry="26" transform="rotate(-40 333 -469)" />
+              <path data-hf-id="hf-t238" class="arm-o" d="M148,-253 L240,-360 L310,-450" />
+              <path data-hf-id="hf-qwmk" class="arm" d="M148,-253 L240,-360 L310,-450" />
+              <circle data-hf-id="hf-dsga" class="hand" cx="310" cy="-450" r="20" />
+            </g>
+
+            <!-- d7 settle: blade out level, coat still flared -->
+            <g data-hf-id="hf-bwjc" id="d7" class="off">
+              <use data-hf-id="hf-b0z9" href="#sk-coat-flare" />
+              <use data-hf-id="hf-b0lj" href="#sk-pony-stream" transform="translate(16 6) rotate(4)" />
+              <use data-hf-id="hf-r7cw" href="#sk-body" transform="translate(16 6) rotate(4)" />
+              <use data-hf-id="hf-daai" href="#sk-settle" />
+            </g>
+
+            <!-- d8 settled hold: coat and hair fall -->
+            <g data-hf-id="hf-gitr" id="d8" class="off">
+              <use data-hf-id="hf-cew9" href="#sk-coat-rest" />
+              <use data-hf-id="hf-2i7x" href="#sk-pony-rest" transform="translate(16 6) rotate(4)" />
+              <use data-hf-id="hf-c2yg" href="#sk-body" transform="translate(16 6) rotate(4)" />
+              <use data-hf-id="hf-ed1a" href="#sk-settle" />
+              <path data-hf-id="hf-f80q" d="M420,-205 L600,-182" fill="none" stroke="#f6e4e4" stroke-width="3" stroke-linecap="round" />
+            </g>
+          </g>
+
+          <!-- speed lines, sakuga only -->
+          <g data-hf-id="hf-xqe5" id="speed" class="off" fill="none" stroke="#f6e4e4" stroke-width="5">
+            <path data-hf-id="hf-xh07" d="M1010,620 L1250,420" />
+            <path data-hf-id="hf-8sn2" d="M1100,700 L1400,450" />
+            <path data-hf-id="hf-eaya" d="M1190,760 L1430,560" />
+            <path data-hf-id="hf-vtul" d="M1300,640 L1560,422" />
+            <path data-hf-id="hf-jdyf" d="M1060,520 L1220,386" />
+          </g>
+
+          <!-- rain in front of the mid figure -->
+          <g data-hf-id="hf-rteb" id="rain2f" class="rain" stroke-width="2" opacity="0.3">
+            <use data-hf-id="hf-26wh" href="#rf2" x="-80" y="560" />
+            <use data-hf-id="hf-914q" href="#rf2" />
+            <use data-hf-id="hf-a8cb" href="#rf2" x="80" y="-560" />
+          </g>
+          <g data-hf-id="hf-vajh" id="rain2n" class="rain" stroke-width="3" opacity="0.55">
+            <use data-hf-id="hf-5zl5" href="#rn2" x="-80" y="560" />
+            <use data-hf-id="hf-mj9u" href="#rn2" />
+            <use data-hf-id="hf-l6lv" href="#rn2" x="80" y="-560" />
+          </g>
+        </svg>
+      </div>
+
+      <!-- 3 · Button · 6.00–8.00 · close-up, locked, fade to ink -->
+      <div data-hf-id="hf-4291" id="s3" class="clip" data-start="5.75" data-duration="2.25" data-track-index="1">
+        <svg data-hf-id="hf-wne4" class="world" viewBox="0 0 1920 1080">
+          <defs data-hf-id="hf-ws6g">
+            <linearGradient data-hf-id="hf-i8g0" id="sky3" x1="0" y1="0" x2="0" y2="1">
+              <stop data-hf-id="hf-c6bh" offset="0" stop-color="#14080c" />
+              <stop data-hf-id="hf-49sd" offset="0.6" stop-color="#2a1016" />
+              <stop data-hf-id="hf-5zi2" offset="1" stop-color="#14080c" />
+            </linearGradient>
+            <path data-hf-id="hf-ucdc" id="rn3" d="M-151,336 l-12,84 M-47,235 l-12,84 M39,107 l-12,84 M93,511 l-12,84 M170,390 l-12,84 M249,372 l-12,84 M377,100 l-12,84 M432,527 l-12,84 M513,361 l-12,84 M599,541 l-12,84 M717,217 l-12,84 M827,489 l-12,84 M887,73 l-12,84 M927,332 l-12,84 M1023,342 l-12,84 M1150,2 l-12,84 M1188,360 l-12,84 M1285,111 l-12,84 M1349,168 l-12,84 M1455,120 l-12,84 M1559,154 l-12,84 M1633,37 l-12,84 M1715,25 l-12,84 M1834,236 l-12,84 M1866,500 l-12,84 M1952,428 l-12,84 M2049,240 l-12,84 M2186,226 l-12,84" />
+            <path data-hf-id="hf-am5v" id="rf3" d="M-146,374 l-8,56 M-109,82 l-8,56 M-79,148 l-8,56 M-22,0 l-8,56 M50,6 l-8,56 M109,414 l-8,56 M133,105 l-8,56 M205,382 l-8,56 M251,476 l-8,56 M304,286 l-8,56 M356,365 l-8,56 M430,283 l-8,56 M497,173 l-8,56 M543,0 l-8,56 M569,154 l-8,56 M630,244 l-8,56 M704,417 l-8,56 M781,466 l-8,56 M812,318 l-8,56 M844,23 l-8,56 M898,94 l-8,56 M999,337 l-8,56 M1002,28 l-8,56 M1085,320 l-8,56 M1160,18 l-8,56 M1170,79 l-8,56 M1237,403 l-8,56 M1308,230 l-8,56 M1353,228 l-8,56 M1389,85 l-8,56 M1488,512 l-8,56 M1534,501 l-8,56 M1550,291 l-8,56 M1606,120 l-8,56 M1672,302 l-8,56 M1745,287 l-8,56 M1801,375 l-8,56 M1852,103 l-8,56 M1874,378 l-8,56 M1939,269 l-8,56 M2002,294 l-8,56 M2068,527 l-8,56 M2134,313 l-8,56 M2179,390 l-8,56" />
+            <clipPath data-hf-id="hf-r9kr" id="cN1"><path data-hf-id="hf-vya1" d="M-60,4 Q-20,-30 44,-16 Q30,14 -20,18 Q-46,16 -60,4 Z" /></clipPath>
+            <clipPath data-hf-id="hf-v9tv" id="cF1"><path data-hf-id="hf-0753" d="M-30,0 Q0,-22 34,-12 Q22,10 -6,12 Q-22,10 -30,0 Z" /></clipPath>
+            <clipPath data-hf-id="hf-jdcp" id="cN3"><path data-hf-id="hf-vjt8" d="M-60,4 Q-20,-12 44,-6 Q30,14 -20,18 Q-46,16 -60,4 Z" /></clipPath>
+            <clipPath data-hf-id="hf-ndlt" id="cF3"><path data-hf-id="hf-0mzr" d="M-30,2 Q0,-10 34,-4 Q22,10 -6,12 Q-22,10 -30,2 Z" /></clipPath>
+          </defs>
+          <rect data-hf-id="hf-rywx" width="1920" height="1080" fill="url(#sky3)" />
+
+          <!-- eclipse in the look room -->
+          <g data-hf-id="hf-it3m" transform="translate(1520 250) scale(1.2)">
+            <circle data-hf-id="hf-gmru" r="300" fill="#ff3b3b" opacity="0.08" />
+            <circle data-hf-id="hf-qo42" r="220" fill="#ff3b3b" opacity="0.14" />
+            <circle data-hf-id="hf-f86j" r="160" fill="#ff3b3b" opacity="0.3" />
+            <g data-hf-id="hf-lhr8" fill="#ff3b3b" opacity="0.5">
+              <path data-hf-id="hf-ivdb" id="spike3" d="M-9,-150 L0,-236 L9,-150 Z" />
+              <use data-hf-id="hf-i8ho" href="#spike3" transform="rotate(58) scale(0.8)" />
+              <use data-hf-id="hf-acj3" href="#spike3" transform="rotate(131)" />
+              <use data-hf-id="hf-n1s9" href="#spike3" transform="rotate(197) scale(0.85)" />
+              <use data-hf-id="hf-x1x1" href="#spike3" transform="rotate(252)" />
+              <use data-hf-id="hf-uu2e" href="#spike3" transform="rotate(311) scale(0.75)" />
+            </g>
+            <circle data-hf-id="hf-w1dd" r="138" fill="none" stroke="#ff3b3b" stroke-width="10" />
+            <circle data-hf-id="hf-ddui" r="132" fill="#100608" />
+          </g>
+          <path data-hf-id="hf-xze6" fill="#14080c" opacity="0.55" d="M1060,1080 L1060,820 L1180,820 L1180,760 L1300,760 L1300,860 L1440,860 L1440,720 L1500,720 L1500,690 L1540,690 L1540,720 L1620,720 L1620,830 L1760,830 L1760,780 L1920,780 L1920,1080 Z" />
+
+          <!-- rain between the world and the close figure -->
+          <g data-hf-id="hf-lij2" id="rain3f" class="rain" stroke-width="2" opacity="0.3">
+            <use data-hf-id="hf-h2jg" href="#rf3" x="-80" y="560" />
+            <use data-hf-id="hf-cz8r" href="#rf3" />
+            <use data-hf-id="hf-6rmi" href="#rf3" x="80" y="-560" />
+          </g>
+          <g data-hf-id="hf-4fe5" id="rain3n" class="rain" stroke-width="3" opacity="0.5">
+            <use data-hf-id="hf-9gno" href="#rn3" x="-80" y="560" />
+            <use data-hf-id="hf-qhdv" href="#rn3" />
+            <use data-hf-id="hf-vw1e" href="#rn3" x="80" y="-560" />
+          </g>
+
+          <!-- close figure: eyes on the upper third, gaze to the right -->
+          <g data-hf-id="hf-lada" transform="translate(700 420)">
+            <path data-hf-id="hf-ts1e" class="cel" stroke-opacity="0.75" d="M-150,-120 C-300,-140 -420,-60 -470,60 L-420,20 L-440,90 C-360,0 -260,-40 -160,-60 Z" />
+            <path data-hf-id="hf-idzw" class="cel" stroke-opacity="0.75" d="M-200,-40 C-220,-220 -80,-300 40,-290 C170,-280 230,-170 210,-40 L188,60 L160,-10 L130,70 L100,-20 L-120,40 L-150,130 L-170,60 L-196,90 Z" />
+            <path data-hf-id="hf-8h55" class="cel" d="M-300,610 L-250,330 L-90,250 L0,350 L90,250 L240,320 L320,610 Z" />
+            <path data-hf-id="hf-bu5r" class="skin" d="M-64,140 L-72,330 L0,352 L74,320 L60,150 Z" />
+            <path data-hf-id="hf-gerl" d="M-96,254 L0,356 L96,254" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linejoin="round" />
+            <path data-hf-id="hf-9plt" class="skin" stroke-width="5" d="M-150,-30 C-184,-40 -190,20 -170,50 C-160,64 -146,60 -140,40 Z" />
+            <path data-hf-id="hf-i05m" class="skin" d="M-150,-60 C-156,-170 -60,-212 40,-206 C130,-198 172,-120 166,-40 C164,10 156,54 140,86 L60,186 C40,206 10,212 -16,200 C-80,166 -136,90 -150,-60 Z" />
+            <path data-hf-id="hf-xtgb" fill="#14080c" opacity="0.2" d="M-150,-60 C-146,40 -110,120 -16,200 C-40,140 -60,70 -50,-20 C-80,-30 -120,-50 -150,-60 Z M-64,170 L-66,240 L0,280 L60,230 L60,150 L50,160 C30,200 -10,214 -64,170 Z" />
+            <path data-hf-id="hf-5ifj" class="ink3" stroke-width="4" d="M100,36 L120,72 L100,78" />
+            <path data-hf-id="hf-s9v0" class="ink3" stroke-width="4" d="M50,130 L98,122" />
+            <path data-hf-id="hf-9l5b" class="cel" stroke-opacity="0.75" d="M-176,-50 C-186,-210 -60,-262 40,-256 C150,-250 206,-170 190,-60 L168,-100 L156,-46 L120,-116 L100,-44 L66,-126 L36,-58 L4,-136 L-28,-64 L-66,-144 L-96,-72 L-132,-138 L-150,-40 Z" />
+            <path data-hf-id="hf-ynl7" fill="#f6e4e4" d="M-130,-188 L-50,-222 L50,-224 L150,-186 L138,-170 L50,-206 L-50,-204 L-120,-170 Z" />
+
+            <!-- b1 eyes open -->
+            <g data-hf-id="hf-7tsk" id="b1">
+              <path data-hf-id="hf-rqyl" fill="#1a1014" d="M-104,-82 L28,-62 L24,-50 L-100,-68 Z" />
+              <path data-hf-id="hf-h4lz" fill="#1a1014" d="M76,-62 L150,-76 L150,-66 L80,-52 Z" />
+              <g data-hf-id="hf-rxua" transform="translate(-36 -20)">
+                <path data-hf-id="hf-2iw5" fill="#f6f3ee" d="M-60,4 Q-20,-30 44,-16 Q30,14 -20,18 Q-46,16 -60,4 Z" />
+                <g data-hf-id="hf-n3op" clip-path="url(#cN1)">
+                  <circle data-hf-id="hf-ngsm" cx="12" cy="-2" r="22" fill="#ff5a4a" />
+                  <circle data-hf-id="hf-7k14" cx="14" cy="-2" r="10" fill="#1a1014" />
+                </g>
+                <rect data-hf-id="hf-r952" x="4" y="-10" width="8" height="7" fill="#f6e4e4" />
+                <rect data-hf-id="hf-n41x" x="22" y="4" width="5" height="5" fill="#f6e4e4" />
+                <path data-hf-id="hf-yrqf" class="hairline" stroke-width="8" d="M-64,6 Q-22,-34 48,-18" />
+                <path data-hf-id="hf-2ym6" class="ink3" d="M-40,18 Q0,22 30,10" />
+              </g>
+              <g data-hf-id="hf-hwi0" transform="translate(112 -24)">
+                <path data-hf-id="hf-7au7" fill="#f6f3ee" d="M-30,0 Q0,-22 34,-12 Q22,10 -6,12 Q-22,10 -30,0 Z" />
+                <g data-hf-id="hf-24s1" clip-path="url(#cF1)">
+                  <circle data-hf-id="hf-29b3" cx="8" cy="-1" r="14" fill="#ff5a4a" />
+                  <circle data-hf-id="hf-kvux" cx="9" cy="-1" r="7" fill="#1a1014" />
+                </g>
+                <rect data-hf-id="hf-b33y" x="3" y="-8" width="6" height="5" fill="#f6e4e4" />
+                <path data-hf-id="hf-5ebg" class="hairline" stroke-width="7" d="M-34,2 Q0,-26 38,-12" />
+              </g>
+              <path data-hf-id="hf-fcr4" class="cel" stroke-opacity="0.75" d="M-160,-60 L-176,80 L-150,30 L-140,110 L-124,-20 Z" />
+            </g>
+
+            <!-- b2 blink, 2 frames -->
+            <g data-hf-id="hf-vfwz" id="b2" class="off">
+              <path data-hf-id="hf-h7ip" fill="#1a1014" d="M-104,-82 L28,-62 L24,-50 L-100,-68 Z" />
+              <path data-hf-id="hf-4mtz" fill="#1a1014" d="M76,-62 L150,-76 L150,-66 L80,-52 Z" />
+              <path data-hf-id="hf-tgh7" class="hairline" stroke-width="7" d="M-98,-14 Q-46,0 10,-20" />
+              <path data-hf-id="hf-yyz6" class="hairline" stroke-width="6" d="M80,-22 Q116,-12 148,-26" />
+              <path data-hf-id="hf-690o" class="cel" stroke-opacity="0.75" d="M-160,-60 L-176,80 L-150,30 L-140,110 L-124,-20 Z" />
+            </g>
+
+            <!-- b3 narrowed, hair follow-through: the final hold -->
+            <g data-hf-id="hf-rhsy" id="b3" class="off">
+              <path data-hf-id="hf-zlge" fill="#1a1014" d="M-104,-74 L28,-54 L24,-42 L-100,-60 Z" />
+              <path data-hf-id="hf-1pi9" fill="#1a1014" d="M76,-54 L150,-70 L150,-60 L80,-44 Z" />
+              <g data-hf-id="hf-c6za" transform="translate(-36 -20)">
+                <path data-hf-id="hf-ufjy" fill="#f6f3ee" d="M-60,4 Q-20,-12 44,-6 Q30,14 -20,18 Q-46,16 -60,4 Z" />
+                <g data-hf-id="hf-oph3" clip-path="url(#cN3)">
+                  <circle data-hf-id="hf-zrx5" cx="12" cy="2" r="22" fill="#ff5a4a" />
+                  <circle data-hf-id="hf-oyif" cx="14" cy="2" r="10" fill="#1a1014" />
+                </g>
+                <rect data-hf-id="hf-79tg" x="4" y="-4" width="8" height="6" fill="#f6e4e4" />
+                <rect data-hf-id="hf-4f9w" x="22" y="6" width="5" height="4" fill="#f6e4e4" />
+                <path data-hf-id="hf-i06q" class="hairline" stroke-width="8" d="M-64,6 Q-22,-16 48,-8" />
+                <path data-hf-id="hf-sdcy" class="ink3" d="M-40,18 Q0,22 30,10" />
+              </g>
+              <g data-hf-id="hf-wi0w" transform="translate(112 -24)">
+                <path data-hf-id="hf-6jj3" fill="#f6f3ee" d="M-30,2 Q0,-10 34,-4 Q22,10 -6,12 Q-22,10 -30,2 Z" />
+                <g data-hf-id="hf-u467" clip-path="url(#cF3)">
+                  <circle data-hf-id="hf-ela1" cx="8" cy="2" r="14" fill="#ff5a4a" />
+                  <circle data-hf-id="hf-sorp" cx="9" cy="2" r="7" fill="#1a1014" />
+                </g>
+                <rect data-hf-id="hf-vmfn" x="3" y="-2" width="6" height="4" fill="#f6e4e4" />
+                <path data-hf-id="hf-crnw" class="hairline" stroke-width="7" d="M-34,4 Q0,-14 38,-4" />
+              </g>
+              <path data-hf-id="hf-z6bo" class="cel" stroke-opacity="0.75" d="M-160,-60 L-190,70 L-156,26 L-150,100 L-124,-20 Z" />
+            </g>
+          </g>
+
+          <!-- the drawn blade, foreground: the brightest shape -->
+          <path data-hf-id="hf-sf6m" class="blade" d="M1150,1000 L1880,640 L1892,654 L1198,1000 Z" />
+          <path data-hf-id="hf-dxj9" d="M1236,984 L1860,656" fill="none" stroke="#f6e4e4" stroke-width="3" />
+        </svg>
+      </div>
+
+      <div data-hf-id="hf-qad6" id="bars" class="clip" data-start="0" data-duration="8" data-track-index="4">
+        <div data-hf-id="hf-1tu2" class="bar top"></div>
+        <div data-hf-id="hf-xs60" class="bar bottom"></div>
+      </div>
+
+      <div data-hf-id="hf-xuvv" id="dip-a" class="clip" data-start="2.1" data-duration="0.75" data-track-index="3"></div>
+      <div data-hf-id="hf-f5p1" id="dip-b" class="clip" data-start="5.7" data-duration="0.75" data-track-index="3"></div>
+      <div data-hf-id="hf-y7d0" id="fade" class="clip" data-start="7.5" data-duration="0.5" data-track-index="5"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // A drawing swap lands on a frame boundary. The 1ms lead keeps a seek to
+      // exactly that frame from missing the set on float rounding.
+      const at = (frame) => frame / 24 - 0.001;
+      const swap = (out, next, frame) => {
+        tl.set(out, { opacity: 0 }, at(frame));
+        tl.set(next, { opacity: 1 }, at(frame));
+      };
+      // Whole loops that end exactly on the clip's last moment, near ~0.25s and far ~0.4s each.
+      const rain = (id, start, length) => {
+        const near = Math.round(length / 0.25);
+        const far = Math.round(length / 0.4);
+        tl.to(`#${id}n`, { x: -80, y: 560, duration: length / near, ease: "none", repeat: near - 1 }, start);
+        tl.to(`#${id}f`, { x: -80, y: 560, duration: length / far, ease: "none", repeat: far - 1 }, start);
+      };
+
+      // 1 · Establish: the only camera move
+      tl.to("#cam1", { scale: 1.06, duration: 2.4, ease: "power1.inOut" }, 0);
+      rain("rain1", 0, 2.4);
+      swap("#e1", "#e2", 24);
+      swap("#e2", "#e3", 40);
+      swap("#e-arm-rest", "#e-arm-hilt", 40);
+
+      // cut 1: accent dip straddles 2.40
+      tl.to("#dip-a", { opacity: 1, duration: 0.25, ease: "power2.in" }, 2.15);
+      tl.to("#dip-a", { opacity: 0, duration: 0.35, ease: "power2.out" }, 2.45);
+
+      // 2 · Sakuga: locked camera, 8 drawings
+      rain("rain2", 2.15, 3.85);
+      swap("#d1", "#d2", 96);
+      swap("#d2", "#d3", 100);
+      swap("#d3", "#d4", 102);
+      swap("#d4", "#d5", 103);
+      swap("#d5", "#d6", 104);
+      swap("#d6", "#d7", 106);
+      swap("#d7", "#d8", 114);
+      tl.set("#speed", { opacity: 1 }, at(102));
+      tl.set("#speed", { opacity: 0 }, at(106));
+      tl.set("#trail", { opacity: 0.45 }, at(103));
+      tl.set("#trail", { opacity: 0 }, at(106));
+
+      // cut 2: ink dip straddles 6.00
+      tl.to("#dip-b", { opacity: 1, duration: 0.25, ease: "power2.in" }, 5.75);
+      tl.to("#dip-b", { opacity: 0, duration: 0.35, ease: "power2.out" }, 6.05);
+
+      // 3 · Button: blink, settle, hold, last 8 frames to ink
+      rain("rain3", 5.75, 2.25);
+      swap("#b1", "#b2", 164);
+      swap("#b2", "#b3", 166);
+      tl.to("#fade", { opacity: 1, duration: 7 / 24, ease: "power1.in" }, 184 / 24);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["film"] = tl;
+    </script>
+  </body>
+</html>

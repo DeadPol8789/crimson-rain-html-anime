@@ -1,0 +1,39 @@
+# Development and rendering artifacts
+.hyperframes/
+renders/
+node_modules/
+dist/
+build/
+coverage/
+.tmp/
+tmp/
+*.log
+npm-debug.log*
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*.crt
+*.cer
+*.mobileprovision
+
+# IDE, OS, and transient files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Internal audit outputs (not for publishing)
+PRIVATE_REVIEW.md
+privacy-scan*.txt
+local-logs/
